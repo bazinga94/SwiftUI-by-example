@@ -11,16 +11,7 @@ struct ContentView: View {
 	
 	let menu = Bundle.main.decode([MenuSection].self, from: "menu.json")
 	
-    var body: some View {	// "some" View -> opaque return types
-//        Text("Hello SwiftUI")
-//			.padding()
-		
-//		List {
-//			Text("1")
-//			Text("2")
-//			Text("3")
-//		}
-		
+    var body: some View {	// "some" View -> opaque return types		
 		NavigationStack {
 			List {
 				ForEach(menu) { section in
@@ -28,7 +19,7 @@ struct ContentView: View {
 						header: Text(section.name), 
 						content: {
 							ForEach(section.items) { items in
-								Text(items.name)
+								ItemRow(item: items)
 							}
 						}
 					)
