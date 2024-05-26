@@ -24,13 +24,18 @@ struct ContentView: View {
 		NavigationStack {
 			List {
 				ForEach(menu) { section in
-					
+					Section(
+						header: Text(section.name), 
+						content: {
+							ForEach(section.items) { items in
+								Text(items.name)
+							}
+						}
+					)
 				}
-				Text("1")
-				Text("2")
-				Text("3")
 			}
 			.navigationTitle("Menu")
+			.listStyle(.grouped)
 		}
 	}
 }
