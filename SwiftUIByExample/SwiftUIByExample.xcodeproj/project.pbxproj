@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		4389C3022C0501B400CEA41E /* MainView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4389C3012C0501B400CEA41E /* MainView.swift */; };
 		43C70C3C2C03BBD700990407 /* menu.json in Resources */ = {isa = PBXBuildFile; fileRef = 43C70C382C03BBD600990407 /* menu.json */; };
 		43C70C3D2C03BBD700990407 /* Helper.swift in Sources */ = {isa = PBXBuildFile; fileRef = 43C70C392C03BBD600990407 /* Helper.swift */; };
 		43C70C3E2C03BBD700990407 /* Order.swift in Sources */ = {isa = PBXBuildFile; fileRef = 43C70C3A2C03BBD700990407 /* Order.swift */; };
@@ -41,6 +42,7 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		4389C3012C0501B400CEA41E /* MainView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainView.swift; sourceTree = "<group>"; };
 		43C70C382C03BBD600990407 /* menu.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = menu.json; sourceTree = "<group>"; };
 		43C70C392C03BBD600990407 /* Helper.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Helper.swift; sourceTree = "<group>"; };
 		43C70C3A2C03BBD700990407 /* Order.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Order.swift; sourceTree = "<group>"; };
@@ -114,6 +116,7 @@
 				43C70C3A2C03BBD700990407 /* Order.swift */,
 				43DA89ED2C0392FC009FFCD7 /* SwiftUIByExampleApp.swift */,
 				43DA89EF2C0392FC009FFCD7 /* ContentView.swift */,
+				4389C3012C0501B400CEA41E /* MainView.swift */,
 				43C70C422C04354300990407 /* ItemDetail.swift */,
 				43C70C442C0445AB00990407 /* OrderView.swift */,
 				43C70C402C03CD1000990407 /* ItemRow.swift */,
@@ -280,6 +283,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				43C70C432C04354300990407 /* ItemDetail.swift in Sources */,
+				4389C3022C0501B400CEA41E /* MainView.swift in Sources */,
 				43C70C452C0445AB00990407 /* OrderView.swift in Sources */,
 				43DA89F02C0392FC009FFCD7 /* ContentView.swift in Sources */,
 				43DA89EE2C0392FC009FFCD7 /* SwiftUIByExampleApp.swift in Sources */,
