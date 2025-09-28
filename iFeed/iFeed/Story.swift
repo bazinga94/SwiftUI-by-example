@@ -9,7 +9,7 @@ import Foundation
 
 // API Response
 struct StoriesPageDTO: Codable {
-	var nextPageId: String
+	var nextPageId: String?
 	var stories: [StoryDTO]
 }
 
@@ -27,7 +27,7 @@ struct ImageMetaDTO: Codable {
 }
 
 // Domain Model
-struct Story {
+struct Story: Identifiable {
 	var id: String
 	var author: String
 	var body: String

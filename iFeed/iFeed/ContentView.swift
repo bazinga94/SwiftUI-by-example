@@ -9,7 +9,7 @@ import SwiftUI
 
 struct ContentView: View {
     var body: some View {
-        FeedView()
+		FeedView(viewModel: FeedViewModel(repository: RemoteFeedRepository(apiClient: URLSessionHTTPClient())))
     }
 }
 

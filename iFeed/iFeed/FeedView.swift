@@ -8,14 +8,23 @@
 import SwiftUI
 
 struct FeedView: View {
+	@StateObject var viewModel: FeedViewModel
+	
+	init(viewModel: FeedViewModel) {
+		self._viewModel = StateObject(wrappedValue: viewModel)
+	}
+	
     var body: some View {
 		NavigationStack {
-			
-			
+			List {
+				ForEach(viewModel.stories) { story in
+					Text(story.author)
+				}
+			}
 		}
     }
 }
 
 #Preview {
-    FeedView()
+	FeedView(viewModel: .init(repository: RemoteFeedRepository(apiClient: URLSessionHTTPClient())))
 }
