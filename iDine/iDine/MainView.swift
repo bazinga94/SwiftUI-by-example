@@ -10,10 +10,10 @@ import SwiftUI
 struct MainView: View {
     var body: some View {
 		TabView {
-			Tab("Menu", image: "list.dash") {
+			Tab("Menu", systemImage: "list.dash") {
 				ContentView()
 			}
-			Tab("Order", image: "square.and.pencil") {
+			Tab("Order", systemImage: "square.and.pencil") {
 				OrderView()
 			}
 		}
