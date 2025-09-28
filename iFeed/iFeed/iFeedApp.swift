@@ -11,7 +11,7 @@ import SwiftUI
 struct iFeedApp: App {
     var body: some Scene {
         WindowGroup {
-            ContentView()
+			FeedView(viewModel: FeedViewModel(repository: RemoteFeedRepository(apiClient: URLSessionHTTPClient())))
         }
     }
 }

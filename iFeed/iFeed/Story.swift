@@ -48,3 +48,9 @@ extension Story {
 		self.image = ImageMeta(url: URL(string: dto.image.url), width: dto.image.width, height: dto.image.height)
 	}
 }
+
+#if DEBUG
+extension Story {
+	static let example: Story = Story(id: "", author: "Jongho Lee", body: "Hello Feed", image: ImageMeta(url: URL(string: ""), width: 1260, height: 840))
+}
+#endif

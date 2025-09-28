@@ -32,9 +32,9 @@ final class URLSessionHTTPClient: HTTPClient {
 enum FeedEndPoint {
 	static func pageURL(id: String?) -> URL {
 		if let id {
-			return URL(string: "TODO\(id)")!
+			return URL(string: "https://\(id).json")!
 		} else {
-			return URL(string: "TODO")!
+			return URL(string: "https://page1.json")!
 		}
 	}
 }

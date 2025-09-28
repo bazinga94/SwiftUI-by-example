@@ -18,9 +18,27 @@ struct FeedView: View {
 		NavigationStack {
 			List {
 				ForEach(viewModel.stories) { story in
-					Text(story.author)
+					Section {
+						StoryRow(story: story)
+							.onAppear {
+								Task {
+									await self.viewModel.fetchFeedIfNeeded(force: false, story: story)
+								}
+							}
+					}
+				}
+				if viewModel.isLoading {
+					HStack {
+						Spacer()
+						ProgressView()
+						Spacer()
+					}
 				}
 			}
+			.task {
+				await self.viewModel.fetchFeedIfNeeded(force: true)
+			}
+			.navigationTitle("iFeed")
 		}
     }
 }

@@ -12,9 +12,9 @@ protocol FeedRepository {
 }
 
 final class RemoteFeedRepository: FeedRepository {
-	let apiClient: HTTPClient
-	var nextPageID: String?
-	var hasMorePage: Bool
+	private let apiClient: HTTPClient
+	private var nextPageID: String?
+	private var hasMorePage: Bool
 	
 	init(apiClient: HTTPClient) {
 		self.apiClient = apiClient
