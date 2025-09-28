@@ -17,7 +17,7 @@ struct ItemRow: View {
 		"V": .green
 	]
 	
-    var body: some View {
+	var body: some View {
 		HStack {
 			Image(item.thumbnailImage)
 				.clipShape(.circle)
@@ -38,7 +38,7 @@ struct ItemRow: View {
 					.foregroundStyle(.white)
 			}
 		}
-    }
+	}
 }
 
 #Preview {
