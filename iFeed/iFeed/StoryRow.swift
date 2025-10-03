@@ -14,21 +14,21 @@ struct StoryRow: View {
 		VStack(alignment: .leading) {
 			Text(story.author)
 				.font(.headline)
-			AsyncImage(url: story.image.url) { phase in
-				switch phase {
-				case .empty:
-					ProgressView()
-				case .success(let image):
-					image
-						.resizable()
-						.scaledToFit()
-				case .failure(_):
-					Image(systemName: "photo").imageScale(.large)
-				@unknown default:
-					EmptyView()
-				}
-			}
-//			.frame(width: CGFloat(story.image.width), height: CGFloat(story.image.height))
+			AsyncCachedImage(url: story.image.url)
+//			AsyncImage(url: story.image.url) { phase in
+//				switch phase {
+//				case .empty:
+//					ProgressView()
+//				case .success(let image):
+//					image
+//						.resizable()
+//						.scaledToFit()
+//				case .failure(_):
+//					Image(systemName: "photo").imageScale(.large)
+//				@unknown default:
+//					EmptyView()
+//				}
+//			}
 			Text(story.body)
 		}
 		.padding()
