@@ -8,6 +8,7 @@
 import Foundation
 import Combine
 
+@MainActor
 class ExpenseViewModel: ObservableObject {
 	@Published var title: String
 	@Published var amount: Int
@@ -31,7 +32,7 @@ class ExpenseViewModel: ObservableObject {
 		self.title = ""
 		self.amount = 0
 		self.date = Date.now
-		self.category = .Food
+		self.category = .food
 		self.errorMessage = ""
 	}
 	

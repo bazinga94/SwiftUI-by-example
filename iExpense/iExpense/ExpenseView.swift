@@ -10,7 +10,12 @@ import SwiftUI
 struct ExpenseView: View {
 	@StateObject var viewModel: ExpenseViewModel
 	@State var path: [Expense] = []
+	@FocusState private var focus: Field?
 	
+	enum Field {
+		case title
+		case amount
+	}
 	
 	init(viewModel: ExpenseViewModel) {
 		self._viewModel = StateObject(wrappedValue: viewModel)
@@ -22,6 +27,9 @@ struct ExpenseView: View {
 				Form {
 					Section {
 						TextField("Title", text: $viewModel.title)
+							.focused($focus, equals: .title)
+							.submitLabel(.next)
+							.onSubmit { focus = .amount }
 						if let error = viewModel.titleError {
 							Text(error)
 								.foregroundColor(.red)
@@ -30,7 +38,9 @@ struct ExpenseView: View {
 					
 					Section {
 						TextField("Amount", value: $viewModel.amount, format: .number)
-							.keyboardType(.numberPad)
+							.keyboardType(.decimalPad)
+							.focused($focus, equals: .amount)
+							.submitLabel(.done)
 						if let error = viewModel.amountError {
 							Text(error)
 								.foregroundColor(.red)
@@ -53,6 +63,7 @@ struct ExpenseView: View {
 							}
 						}
 					}
+					.disabled(!viewModel.isValid)
 				}
 			}
 			.navigationDestination(for: Expense.self) { expense in
